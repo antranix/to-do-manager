@@ -1,6 +1,6 @@
 # To-Do Changelog Manager
 
-A VS Code extension that helps you manage **to-do tasks** and **project changelogs** directly from dedicated side-panel views, keeping your development workflow organized and your release notes always up to date.
+A VS Code extension that helps you manage **to-do tasks** directly from dedicated side-panel views, keeping your development workflow organized and your release notes always up to date.
 
 The extension provides **two visual interfaces**: one for managing To-Do items and another for building and maintaining a structured `CHANGELOG.md`.
 
@@ -21,36 +21,11 @@ Manage your development tasks without leaving VS Code:
 
 ---
 
-### 📄 Changelog Manager View
-
-Create and maintain changelogs visually and consistently:
-
-* ➕ Add new versions
-* 🧩 Add entries to predefined changelog sections:
-
-  * Additions
-  * Changes
-  * Fixes
-  * Deprecations
-  * Removals
-  * Security Changes
-* ✏️ Edit or 🗑️ remove individual entries
-* 🔄 Automatically keeps the **latest version at the top**
-* 🧹 Omits empty sections for cleaner output
-* 📁 Persists all changes directly into `CHANGELOG.md`
-
-> The changelog interface and structure are **inspired by**
-> [https://github.com/tobiaswaelde/vscode-simple-changelog](https://github.com/tobiaswaelde/vscode-simple-changelog)
-> and implemented with custom logic and extended functionality.
-
----
-
 ## 🧭 User Interface
 
 The extension adds **two sidebar views** to VS Code:
 
 * **To-Do Manager**
-* **Changelog Manager**
 
 Each view includes:
 
@@ -66,7 +41,7 @@ No command-only workflow — everything is visual and intuitive.
 
 1. Open **VS Code**
 2. Go to **Extensions** (`Ctrl+Shift+X` / `Cmd+Shift+X`)
-3. Search for **To-Do Changelog Manager** [To-Do Changelog Manager](https://marketplace.visualstudio.com/items?itemName=AntranixDEV.to-do-changelog-manager)
+3. Search for **To-Do Manager** [To-Do Manager](https://marketplace.visualstudio.com/items?itemName=AntranixDEV.to-do-manager)
 4. Click **Install**
 
 ---
@@ -75,17 +50,9 @@ No command-only workflow — everything is visual and intuitive.
 
 ### To-Do Manager View
 
-![To-Do Manager View](https://github.com/antranix/to-do-changelog-manager/blob/main/screen/1.png)
+![To-Do Manager View](https://github.com/antranix/to-do-manager/blob/main/screen/1.png)
 
 Manage your development tasks using an intuitive tree view with quick actions to add, edit, delete, and mark items as completed.
-
----
-
-### Changelog Manager View
-
-![Changelog Manager View](https://github.com/antranix/to-do-changelog-manager/blob/main/screen/2.png)
-
-Create and maintain structured changelogs visually, keeping versions ordered and sections clean.
 
 ---
 
@@ -121,14 +88,3 @@ All actions are available via toolbar buttons or right-click menus.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
----
-
-Si quieres, el siguiente paso lógico sería:
-
-* 🔍 Optimizar keywords para el **Marketplace search**
-* 🎞️ Agregar un **GIF animado**
-* 🧩 Añadir una sección **“Why use this extension?”**
-* 🧪 Alinear README con tu `package.json` (comandos, vistas, contributes)
-
-Dime y lo dejamos **nivel extensión top** 🚀
