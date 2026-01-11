@@ -1,0 +1,134 @@
+{
+  "name": "to-do-manager",
+  "publisher": "AntranixDEV",
+  "displayName": "TO-DO Manager",
+  "description": "Manage your TO-DO tasks efficiently.",
+  "version": "0.0.10",
+  "engines": {
+    "vscode": "^1.108.0"
+  },
+  "icon": "resources/img/icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antranix/to-do-manager"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onView:todoView",
+    "onCommand:todo.add",
+    "onCommand:todo.complete",
+    "onCommand:todo.uncomplete",
+    "onCommand:todo.refresh",
+    "onCommand:todo.edit",
+    "onCommand:todo.remove"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "todo.add",
+        "title": "➕"
+      },
+      {
+        "command": "todo.complete",
+        "title": "✔️"
+      },
+      {
+        "command": "todo.uncomplete",
+        "title": "🔙"
+      },
+      {
+        "command": "todo.refresh",
+        "title": "↻"
+      },
+      {
+        "command": "todo.edit",
+        "title": "✏️"
+      },
+      {
+        "command": "todo.remove",
+        "title": "✖️"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "todoContainer",
+          "title": "TO-DO",
+          "icon": "dist/resources/img/todo-list.svg"
+        }
+      ]
+    },
+    "views": {
+      "todoContainer": [
+        {
+          "id": "todoView",
+          "name": "TO-DO"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "todo.add",
+          "when": "view == todoView",
+          "group": "navigation"
+        },
+        {
+          "command": "todo.refresh",
+          "when": "view == todoView",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "todo.complete",
+          "when": "view == todoView && viewItem == pending",
+          "group": "inline"
+        },
+        {
+          "command": "todo.uncomplete",
+          "when": "view == todoView && viewItem == done",
+          "group": "inline"
+        },
+        {
+          "command": "todo.edit",
+          "when": "view == todoView && (viewItem == pending || viewItem == done)",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.108.0",
+    "@types/uuid": "^10.0.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "copy-webpack-plugin": "^13.0.1",
+    "eslint": "^9.39.2",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.52.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "uuid": "^13.0.0"
+  }
+}
